@@ -1,0 +1,27 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+}
+
+.nums {
+    margin: 0px !important;
+}
+
+.solution {
+    max-width: 560px;
+    margin: auto;
+}
+
+.responsiveimg {
+    width: 100%;
+    height: auto;
+}
+
+.input-field input[type=text] {
+    border-bottom: none !important;
+}
+
+input,
+.nums {
+    text-align: center;
+}
