@@ -89,7 +89,7 @@ def recognizeDigits(nums, crop_size=7, mean_th=240):
         if mn < mean_th:
             sudoku.append(model.predict_classes(cv2.resize(num_cr, (28, 28)).reshape(1, 28, 28, 1))[0])
         else:
-            sudoku.append(0)
+            sudoku.append('.')
     return sudoku       
 
 def smart_solve(grids):
