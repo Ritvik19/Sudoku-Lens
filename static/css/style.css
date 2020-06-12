@@ -1,3 +1,15 @@
+*,
+h1,
+input,
+button {
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+body {
+    background-image: url('/static/bg.jpg');
+    background-size: cover;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
@@ -5,6 +17,7 @@
 
 .nums {
     margin: 0px !important;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .solution {
@@ -19,9 +32,26 @@
 
 .input-field input[type=text] {
     border-bottom: none !important;
+    color: white !important;
 }
 
 input,
 .nums {
     text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f4068;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #162447;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #162447;
 }

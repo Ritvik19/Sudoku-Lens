@@ -1,51 +1,25 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Sudoku Lens</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
-</head>
-
-<body>
-    <div class="container">
-        <br><br>
-        <h1 class="w3-jumbo">
-            Sudoku Lens
-        </h1>
-        <p class="w3-large">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum, saepe delectus? Alias suscipit dolore saepe ea, cum reiciendis nesciunt. Nihil fuga tempora animi eaque magnam odit dicta incidunt, ipsam quia!
-            <br> <br> <br> <b>Confirm Quiz :</b>
-        </p>
-        <div class="w3-row-padding">
-            <div class="w3-col m6">
-                <img src="{{ url_for('static', filename=filename) }}" class="responsiveimg">
-            </div>
-            <div class="w3-col m6">
-                <form action="{{ url_for('solve') }}" method="post">
-                    <div class="grid-container">
-                        {% for i in range(9) %} {% for j in range(9) %}
-                        <div class="input-field grid-item w3-border nums">
-                            <input type="text" value="{{ quiz[i][j] }}" name="{{ i }}_{{ j }}">
-                        </div> {% endfor %} {% endfor %}
-                    </div>
-                    <br>
-                    <div class="w3-center">
-                        <button type="submit" class="btn">Go</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
+{% extends "layout.html" %} {% block content %}
+<p class="w3-large">
+    <br> <br> <br> <b>Confirm Quiz :</b>
+</p>
+<div class="w3-row-padding">
+    <div class="w3-col m6">
+        <img src="{{ url_for('static', filename=filename) }}" class="responsiveimg">
     </div>
+    <div class="w3-col m6">
+        <form action="{{ url_for('solve') }}" method="post">
+            <div class="grid-container">
+                {% for i in range(9) %} {% for j in range(9) %}
+                <div class="input-field grid-item w3-border nums">
+                    <input type="text" value="{{ quiz[i][j] }}" name="{{ i }}_{{ j }}">
+                </div> {% endfor %} {% endfor %}
+            </div>
+            <br>
+            <div class="w3-center">
+                <button type="submit" class="btn w3-indigo">Solve</button>
+            </div>
+        </form>
+    </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-</body>
-
-</html>
+{% endblock %}
