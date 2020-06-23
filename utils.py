@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import to_categorical
 
-model = load_model('E:/Models/Lens/lens-digi-3.h5')
-solver = load_model('E:/Models/Sudoku-Solver/Sudoku.h5')
+model = load_model('neuralnetworks/lens-digi.h5')
+solver = load_model('neuralnetworks/sudoku.h5')
 
 def resize(img, max_dim=640):
     h, w = img.shape[:2]
