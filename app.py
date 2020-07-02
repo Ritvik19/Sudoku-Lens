@@ -7,9 +7,6 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import to_categorical
 
-model = load_model('neuralnetworks/lens-digi.h5')
-solver = load_model('neuralnetworks/sudoku.h5')
-
 def resize(img, max_dim=640):
     h, w = img.shape[:2]
     if h > w:
@@ -111,6 +108,9 @@ def smart_solve(grids):
 
 
 app = Flask(__name__)
+
+model = load_model('neuralnetworks/lens-digi.h5')
+solver = load_model('neuralnetworks/sudoku.h5')
 
 @app.route('/')
 def home():
