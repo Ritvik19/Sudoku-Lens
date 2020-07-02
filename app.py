@@ -122,10 +122,10 @@ def confirm():
     f.save('static/'+f.filename)
     
     img = cv2.imread('static/'+f.filename, 0)
-    img = utils.resize(img, 640)
-    cropped = cv2.resize(utils.getGrid(img), (640, 640))
-    nums = utils.getNums(cropped)
-    nums = utils.recognizeDigits(nums)
+    img = resize(img, 640)
+    cropped = cv2.resize(getGrid(img), (640, 640))
+    nums = getNums(cropped)
+    nums = recognizeDigits(nums)
     quiz = []
     for i in range(9):
         quiz.append(nums[i*9:(i+1)*9])
@@ -139,7 +139,7 @@ def solve():
     for i in range(9):
         quiz.append(list(map(int, [0 if x=='.' else x for x in sudoku[i*9:(i+1)*9]])))
     quiz = np.array([quiz])
-    solution = utils.smart_solve(quiz)        
+    solution = smart_solve(quiz)        
     return render_template('solve.html', solution=solution)
 
 if __name__ == '__main__':
