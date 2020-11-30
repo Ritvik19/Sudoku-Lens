@@ -9,6 +9,6 @@ ___
 
 **Neural Network Details**
 
-* [Convolutional Neural Network](https://github.com/Ritvik19/HandWriting-Recognition/tree/master/01-Digit-Recognition)
+* [Convolutional Neural Network](https://github.com/Ritvik19/HandWriting-Recognition)
   
 * [Artificial Neural Network](https://github.com/Ritvik19/Gladiators/tree/master/Sudoku-Neural%20Nets)
